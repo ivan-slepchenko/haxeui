@@ -197,11 +197,11 @@ class Button extends StateComponent implements IFocusable implements IClonable<S
 			layout = new BoxLayout();
 			addChild(_label);
 			addChild(_icon);
-		}
-		
-        if (_iconPosition == "fill" && _icon != null) {
+		} else if (_iconPosition == "fill" && _icon != null) {
           _icon.width = width;
           _icon.height = height;
+	        addChild(_icon);
+	        addChild(_label);
         }
 
 		if (layout.usableHeight <= 0) {
@@ -217,7 +217,7 @@ class Button extends StateComponent implements IFocusable implements IClonable<S
 			}
 			height = cy;
 		}
-		
+
 		invalidate(InvalidationFlag.STYLE);
 	}
 	
