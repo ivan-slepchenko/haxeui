@@ -224,7 +224,7 @@ class Image extends Component implements IClonable<Image> {
 			#if (flash || html5)
 				var l:Loader = new Loader(); 
 				l.load(new URLRequest(res)); 
-				l.contentLoaderInfo.addEventListener(Event.INIT, function(dyn) { 
+				l.contentLoaderInfo.addEventListener(Event.COMPLETE, function(dyn) {
 					var bmp:Bitmap = cast(l.content, Bitmap);
 					var bmpData:BitmapData = new BitmapData(cast bmp.width, cast bmp.height, true, 0);
 					bmpData.draw(bmp.bitmapData);
