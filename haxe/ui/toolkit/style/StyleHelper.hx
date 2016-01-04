@@ -78,7 +78,6 @@ class StyleHelper {
 						matrix.createGradientBox(w - 2, h - 2, 0, 0, 0);				
 					}
 					
-					#if (!html5)
 					g.beginGradientFill(GradientType.LINEAR, 
 													colors,
 													alphas,
@@ -87,9 +86,6 @@ class StyleHelper {
 													SpreadMethod.PAD, 
 													InterpolationMethod.LINEAR_RGB, 
 													0);
-					#else
-					g.beginFill(style.backgroundColor, backgroundAlpha);
-					#end
 				} else {
 					g.beginFill(style.backgroundColor, backgroundAlpha);
 				}
